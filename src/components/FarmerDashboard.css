@@ -1,0 +1,228 @@
+/* ── Farmer Dashboard ──────────────────────── */
+.farmer-page {
+  padding: 40px 0 60px;
+  min-height: calc(100vh - 68px);
+  background: var(--color-bg);
+}
+
+.farmer-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.farmer-header h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+.farmer-header p {
+  color: var(--color-text-light);
+  font-size: 1rem;
+}
+
+.farmer-stats {
+  display: flex;
+  gap: 12px;
+}
+.stat-card {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 16px 28px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(45, 106, 79, 0.3);
+}
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.78rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+/* ── Add Product Form Card ─────────────────── */
+.farmer-form-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+  border: 1px solid var(--color-border);
+}
+.farmer-form-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.farmer-form .form-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.farmer-form .form-group {
+  flex: 1;
+  min-width: 160px;
+  margin-bottom: 16px;
+}
+.farmer-form .form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+.farmer-form .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background: var(--color-bg);
+}
+.farmer-form .form-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+  background: white;
+}
+
+.add-btn {
+  padding: 13px 32px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(45, 106, 79, 0.25);
+}
+.add-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.35);
+}
+.add-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Products Section ──────────────────────── */
+.farmer-products-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-border);
+}
+.empty-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.empty-state p {
+  color: var(--color-text-light);
+  font-size: 1rem;
+}
+
+/* ── Product Grid ──────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: var(--transition);
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-emoji {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+.product-qty {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 8px;
+}
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.delete-btn {
+  padding: 8px 18px;
+  background: #fef2f2;
+  color: var(--color-danger);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid #fecaca;
+}
+.delete-btn:hover {
+  background: var(--color-danger);
+  color: white;
+  border-color: var(--color-danger);
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 768px) {
+  .farmer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .farmer-form .form-row {
+    flex-direction: column;
+  }
+}

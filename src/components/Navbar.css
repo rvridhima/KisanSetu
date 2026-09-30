@@ -1,0 +1,88 @@
+/* ── Navbar ─────────────────────────────────── */
+.navbar {
+  background: var(--gradient-hero);
+  padding: 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(244, 162, 97, 0.4);
+}
+
+.navbar-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-name {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.navbar-role {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.navbar-logout {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-left: 8px;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+.navbar-logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}

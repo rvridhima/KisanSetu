@@ -1,0 +1,125 @@
+/* ================================================
+   KisanSetu — Global Styles
+   ================================================ */
+
+:root {
+  /* Color Palette — earthy greens + warm accents */
+  --color-primary: #2d6a4f;
+  --color-primary-light: #40916c;
+  --color-primary-dark: #1b4332;
+  --color-accent: #f4a261;
+  --color-accent-dark: #e76f51;
+  --color-bg: #fafaf5;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f0f7f4;
+  --color-text: #1a1a2e;
+  --color-text-light: #6b7280;
+  --color-border: #e0e7e3;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
+  --gradient-accent: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+  --gradient-hero: linear-gradient(135deg, #1b4332 0%, #2d6a4f 40%, #40916c 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 25px rgba(45, 106, 79, 0.25);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 50px;
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+button {
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Scrollbar Styling ─────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 10px;
+}
+
+/* ── Utility Classes ───────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Toast / Notification ──────────────────── */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-primary);
+  color: white;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-weight: 500;
+  font-size: 0.95rem;
+  z-index: 9999;
+  animation: slideUp 0.4s ease, fadeOut 0.4s ease 2.6s forwards;
+}
+.toast.error {
+  background: var(--color-danger);
+}
+.toast.success {
+  background: var(--color-success);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-10px); }
+}
